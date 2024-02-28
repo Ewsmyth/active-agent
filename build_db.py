@@ -3,9 +3,9 @@ import sqlite3
 
 def build_database():
     # Check if the database file exists
-    if not os.path.exists('example.db'):
+    if not os.path.exists('active-agent-db.db'):
         # Connect to SQLite database (creates if not exists)
-        conn = sqlite3.connect('example.db')
+        conn = sqlite3.connect('active-agent-db.db')
         c = conn.cursor()
         
         # Create a table for users
