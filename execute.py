@@ -77,7 +77,7 @@ class ExecuteTab(tk.Frame):
         login_url = base_url
 
         try:
-            conn = sqlite3.connect('example.db')
+            conn = sqlite3.connect('active-agent-db.db')
             c = conn.cursor()
 
             session = requests.Session()
