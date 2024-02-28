@@ -86,7 +86,7 @@ class AddPostTab(tk.Frame):
         shutil.copyfile(image_path, destination_path)
 
         # Insert post data into the database
-        conn = sqlite3.connect('example.db')
+        conn = sqlite3.connect('active-agent-db.db')
         c = conn.cursor()
         c.execute("INSERT INTO posts (comment, picture) VALUES (?, ?)", (comment, image_name))
         conn.commit()
@@ -109,7 +109,7 @@ class AddPostTab(tk.Frame):
         confirm = messagebox.askyesno("Delete Post", f"Are you sure you want to delete this post?")
         if confirm:
             # Delete post from the database
-            conn = sqlite3.connect('example.db')
+            conn = sqlite3.connect('active-agent-db.db')
             c = conn.cursor()
             c.execute("DELETE FROM posts WHERE comment=? AND picture=?", (comment, image_name))
             conn.commit()
@@ -132,7 +132,7 @@ class AddPostTab(tk.Frame):
             widget.destroy()
 
         # Connect to database and retrieve posts
-        conn = sqlite3.connect('example.db')
+        conn = sqlite3.connect('active-agent-db.db')
         c = conn.cursor()
         c.execute("SELECT comment, picture FROM posts ORDER BY id DESC")
         posts = c.fetchall()
