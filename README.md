@@ -17,6 +17,6 @@ cd C:\active-agent-main
 ```
 ### Once you are in the C:\active-agent-main folder you can build the .exe file
 ```
-python -m PyInstaller --onefile --noconsole bot.py
+python -m PyInstaller --onefile --noconsole "Active Agent.py"
 ```
-### If you want to make a shortcut on your desktop (which you should), right-click on your desktop and select 'new' and then 'shortcut', Whne the create shortcut wizard pops-up select 'Browse...' the file path to the .exe file is "C:\active-agent-main\dist\bot.exe" Then you can select 'Next'.
+### If you want to make a shortcut on your desktop (which you should), right-click on your desktop and select 'new' and then 'shortcut', When the create shortcut wizard pops-up select 'Browse...' the file path to the .exe file is "C:\active-agent-main\dist\bot.exe" Then you can select 'Next'.
