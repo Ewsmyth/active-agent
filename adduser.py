@@ -60,7 +60,7 @@ class AddUserTab(tk.Frame):
 
     def populate_user_treeview(self):
         # Connect to database and retrieve usernames and passwords
-        conn = sqlite3.connect('example.db')
+        conn = sqlite3.connect('active-agent-db.db')
         c = conn.cursor()
         c.execute("SELECT username, password FROM users")
         users = c.fetchall()
@@ -82,7 +82,7 @@ class AddUserTab(tk.Frame):
         password = self.password_entry.get()
         
         # Insert user data into the database
-        conn = sqlite3.connect('example.db')
+        conn = sqlite3.connect('active-agent-db.db')
         c = conn.cursor()
         c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         conn.commit()
@@ -109,7 +109,7 @@ class AddUserTab(tk.Frame):
         confirmation = messagebox.askyesno("Confirmation", f"Are you sure you want to delete {username}?")
         if confirmation:
             # Delete the user from the database
-            conn = sqlite3.connect('example.db')
+            conn = sqlite3.connect('active-agent-db.db')
             c = conn.cursor()
             c.execute("DELETE FROM users WHERE username=?", (username,))
             conn.commit()
