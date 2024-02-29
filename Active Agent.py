@@ -10,7 +10,7 @@ build_database()
 class BotApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Interactify Bot")
+        self.title("Active Agent")
         self.geometry("800x600")
 
         self.window_closed = False  # Flag to indicate if the window is closed
